@@ -15,6 +15,7 @@ services:
     image: envoyproxy/envoy:v1.27-latest
     command: ["envoy", "-c", "/etc/envoy/envoy.yaml", "--log-level", "debug"]
     ports:
+      - "9901:9901"
       - "8080:8080"
     volumes:
       - ./envoy.yaml:/etc/envoy/envoy.yaml
